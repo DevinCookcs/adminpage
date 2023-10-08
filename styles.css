@@ -11,10 +11,46 @@
 
 body {
     background-color: #C3E0E5;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
 }
 
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(92, 179, 206);
+    color: white;
+    padding-left: 25px;
+    
+}
 
+.sidebar h1 {
+    font-size: 30px;
+    margin: 2rem 0;
+}
 
+.nav {
+    font-size: 24px;
+    margin: 2rem 0;
 
+}
 
+.nav li {
+    padding-bottom: 10px;
+}
 
+.header-wrapper {
+    grid-area: header;
+    background-color: white;
+}
+
+.main-wrapper {
+    grid-area: main;
+    background-color: rgb(190, 188, 188);
+}
