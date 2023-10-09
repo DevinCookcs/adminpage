@@ -16,10 +16,10 @@
 }
 
 body {
-    /* background-color: #D0E7D2; */
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 4fr;
+    height: 100vh;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
         "sidebar header"
         "sidebar main";
@@ -31,12 +31,10 @@ body {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     background-color: var(--sidebar);
     color: white;
     padding-left: 25px;
     justify-content: start;
-
 }
 
 .sidebar h1 {
@@ -172,11 +170,59 @@ body {
     height: 48px;
 }
 
-
-
-/* ---------Main------------- */
+/* ----------Main------------- */
 
 .main-wrapper {
     grid-area: main;
     background-color: var(--body);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: min-content 1fr;
+    gap: 2rem;
+    grid-template-areas:
+        "projects announcements"
+        "projects trending";
+    padding: 2em;
+}
+
+.main-wrapper h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+  
+.card {
+    background-color: var(--header);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.projects .card {
+    border-left: 10px solid var(--sidebar);
+    display: flex;
+    flex-direction: column;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.announcement {
+    width: 25ch;
+    padding: 1rem 0;
+}
+
+.trending {
+    grid-area: trending;
 }
