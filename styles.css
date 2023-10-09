@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+    --sidebar: #505c56;
+    --header: #d8d6d8;
+    --body: #b1bebf;
+}
+
 * {
     list-style: none;
     text-decoration: none;
@@ -10,25 +16,27 @@
 }
 
 body {
-    background-color: #C3E0E5;
+    /* background-color: #D0E7D2; */
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 4fr;
-    grid-template-areas: 
+    grid-template-areas:
         "sidebar header"
         "sidebar main";
 }
+
+/* --------------Sidebar--------------*/
 
 .sidebar {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgb(92, 179, 206);
+    background-color: var(--sidebar);
     color: white;
     padding-left: 25px;
     justify-content: start;
-    
+
 }
 
 .sidebar h1 {
@@ -44,19 +52,131 @@ body {
 
 .nav li {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "icon item";
     grid-template-columns: 50px;
     padding-bottom: 10px;
 }
 
+/* ----------Header----------- */
 
 .header-wrapper {
     grid-area: header;
-    background-color: white;
+    background-color: var(--header);
+    padding: 1.5rem 3rem;
+    z-index: 3;
 }
+
+.top-header {
+    display: grid;
+    grid-template-areas:
+        "search account";
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+}
+
+.search-bar label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-bar>#search {
+    display: inline-block;
+    border: 0;
+    background-color: var(--body);
+    padding: 0.75em 2em;
+    margin-left: 1.25rem;
+    border-radius: 99em;
+    width: min(80%, 700px);
+}
+
+.account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.account span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture {
+    background: center center / cover no-repeat;
+    border-radius: 50%;
+    margin: 0 1rem 0 2.5rem;
+    height: 40px;
+    width: 40px;
+}
+
+.bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-pic {
+    width: 75px;
+    height: 75px;
+}
+
+.profile .greeting {
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+}
+
+.profile .name {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn {
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    padding: 0.75em 2.6em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background-color: var(--sidebar);
+    height: 48px;
+}
+
+
+
+/* ---------Main------------- */
 
 .main-wrapper {
     grid-area: main;
-    background-color: rgb(190, 188, 188);
+    background-color: var(--body);
 }
