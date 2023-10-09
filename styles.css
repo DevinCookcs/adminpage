@@ -43,15 +43,12 @@ body {
 }
 
 .nav li {
+    display: grid;
+    grid-template-areas: 
+        "icon item";
+    grid-template-columns: 50px;
     padding-bottom: 10px;
-    
 }
-
-.sidebar span {
-    padding-right: 20px;
-}
-
-
 
 
 .header-wrapper {
