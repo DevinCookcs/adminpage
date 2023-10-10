@@ -189,7 +189,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
 }
-  
+
 .card {
     background-color: var(--header);
     padding: 2rem;
@@ -214,6 +214,11 @@ body {
     flex-direction: column;
 }
 
+.card-title {
+    font-size: 1rem;
+}
+
+
 .announcements {
     grid-area: announcements;
 }
@@ -223,6 +228,32 @@ body {
     padding: 1rem 0;
 }
 
+.announcement:first-child {
+    padding-top: 0;
+}
+
+.announcement:last-child {
+    padding-bottom: 0;
+}
+
+.announcement h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.25em;
+}
+
+.announcement p {
+    font-size: 0.8rem;
+    overflow: hidden;
+}
+
+.announcement + .announcement {
+    border-top: var(--sidebar) 3px solid;
+  }
+
 .trending {
     grid-area: trending;
+}
+
+.trending p{
+    font-size: 0.9rem;
 }
