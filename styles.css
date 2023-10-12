@@ -218,6 +218,13 @@ body {
     font-size: 1rem;
 }
 
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-top: auto;
+    gap: 1em;
+}
 
 .announcements {
     grid-area: announcements;
