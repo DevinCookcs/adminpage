@@ -253,14 +253,14 @@ body {
     overflow: hidden;
 }
 
-.announcement + .announcement {
+.announcement+.announcement {
     border-top: var(--sidebar) 3px solid;
-  }
+}
 
 .trending {
     grid-area: trending;
 }
 
-.trending p{
+.trending p {
     font-size: 0.9rem;
 }
